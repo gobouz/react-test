@@ -1,0 +1,11 @@
+version: '3'
+services:
+    node_react:
+        build: site
+        # entrypoint: node --inspect-brk=127.0.0.1:5858 src/App.js
+        command: nodemon -L --inspect=0.0.0.0:5858
+        volumes:
+            - ../:/var/www/react
+        ports:
+            - "80:80"
+            - "5858:5858"
