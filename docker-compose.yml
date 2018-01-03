@@ -1,0 +1,12 @@
+version: '3'
+services:
+    node_react:
+        container_name: node_react
+        build: .
+        command: nodemon --inspect-brk=127.0.0.1:5858
+        # command: node --inspect-brk=127.0.0.1:5858
+        volumes:
+            - .:/var/www/react
+        ports:
+            - "80:80"
+            - "5858:5858"
